@@ -350,7 +350,7 @@ function Contact() {
           <FaEnvelope />
         </a>
         <a
-          href="https://linkedin.com/in/evanson"
+          href="https://linkedin.com/in/evanson-murimi-51a771125"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn profile"
@@ -360,7 +360,7 @@ function Contact() {
           <FaLinkedin />
         </a>
         <a
-          href="https://github.com/evanson"
+          href="https://github.com/evanson96"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub profile"
