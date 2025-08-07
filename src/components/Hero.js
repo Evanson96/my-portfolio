@@ -20,16 +20,17 @@ const Hero = ({ onViewProjects }) => {
         <p className="text-xl md:text-2xl font-roboto italic mb-6">
           <Typewriter
             words={[
-              "Frontend Developer & Data Enthusiast",
-              "ReactJS | Python | Power BI",
-              "Building Beautiful Dashboards",
+              "Frontend Engineer & Data Solutions Developer",
+              "Building Scalable Web Applications",
+              "Transforming Data into Actionable Insights",
+              "React | Next.js | Data Visualization"
             ]}
             loop={0}
             cursor
             cursorStyle="|"
             typeSpeed={70}
             deleteSpeed={50}
-            delaySpeed={1500}
+            delaySpeed={2000}
           />
         </p>
         <button
@@ -38,7 +39,7 @@ const Hero = ({ onViewProjects }) => {
                      shadow-lg hover:bg-blue-50 hover:scale-105 transform transition-transform
                      focus:outline-none focus:ring-4 focus:ring-white animate-bounce-on-load"
         >
-          View Projects
+          View My Work
         </button>
       </div>
     </section>
