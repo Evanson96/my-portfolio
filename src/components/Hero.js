@@ -1,49 +1,37 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 
-const Hero = ({ onViewProjects }) => {
+export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative h-screen flex flex-col items-center justify-center text-center text-white px-6
-                 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800"
-    >
-      <div className="absolute inset-0 z-0 opacity-20 animate-bg-pan">
-        <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-white rounded-full mix-blend-overlay blur-3xl opacity-50 animate-pulse-slow"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-blue-300 rounded-full mix-blend-overlay blur-3xl opacity-50 animate-pulse-slow-reverse"></div>
-      </div>
-      
-      <div className="relative z-10 animate-fade-in-up">
-        <h1 className="text-5xl md:text-7xl font-bold font-montserrat mb-4 drop-shadow-lg">
-          Evanson Munene Murimi
-        </h1>
-        <p className="text-xl md:text-2xl font-roboto italic mb-6">
+    <section id="home" className="relative min-h-[85vh] flex items-center justify-center text-center bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 dark:from-slate-900 dark:to-slate-800">
+      <div className="max-w-3xl px-6 text-white" data-aos="fade-up">
+        <h1 className="text-4xl md:text-6xl font-extrabold">Evanson Munene Murimi</h1>
+
+        <h2 className="mt-4 text-xl md:text-2xl font-semibold">
           <Typewriter
             words={[
-              "Frontend Engineer & Data Solutions Developer",
-              "Building Scalable Web Applications",
-              "Transforming Data into Actionable Insights",
-              "React | Next.js | Data Visualization"
+              "Frontend React Developer",
+              "Backend & API Engineer",
+              "Data Analyst & Dashboard Builder",
             ]}
-            loop={0}
+            loop
             cursor
             cursorStyle="|"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={2000}
+            typeSpeed={55}
+            deleteSpeed={40}
+            delaySpeed={1400}
           />
+        </h2>
+
+        <p className="mt-6 text-white/90 leading-relaxed">
+          I build production-ready web applications and robust backend systems — React for the client, Node/Express or Python for the server, and SQL/NoSQL where it matters.
         </p>
-        <button
-          onClick={onViewProjects}
-          className="mt-4 px-8 py-3 bg-white text-blue-700 font-semibold rounded-full
-                     shadow-lg hover:bg-blue-50 hover:scale-105 transform transition-transform
-                     focus:outline-none focus:ring-4 focus:ring-white animate-bounce-on-load"
-        >
-          View My Work
-        </button>
+
+        <div className="mt-8 flex gap-4 justify-center">
+          <a href="#projects" className="px-6 py-3 rounded-full bg-white text-blue-700 font-bold shadow hover:scale-[1.02] transition" onClick={(e)=>e.preventDefault()}>View Projects</a>
+          <a href="#contact" className="px-6 py-3 rounded-full border-2 border-white text-white font-bold hover:bg-white/10 transition" onClick={(e)=>e.preventDefault()}>Hire Me</a>
+        </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

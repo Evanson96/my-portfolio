@@ -1,43 +1,12 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-blue-600 text-white py-6 font-montserrat select-none">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-        <p className="text-center md:text-left text-lg mb-2 md:mb-0">
-          © 2025 Evanson Munene Murimi
-        </p>
-        <div className="flex space-x-8 text-2xl">
-          <a
-            href="mailto:evanson@example.com"
-            aria-label="Email Evanson Munene Murimi"
-            className="hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-white rounded"
-          >
-            <FaEnvelope />
-          </a>
-          <a
-            href="https://linkedin.com/in/evanson-murimi-51a771125"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            className="hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-white rounded"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/evanson"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            className="hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-white rounded"
-          >
-            <FaGithub />
-          </a>
-        </div>
+    <footer className="py-8 border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-sm">© {new Date().getFullYear()} Evanson Munene Murimi — All rights reserved.</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">Built with React & Tailwind • Optimized for SEO & Accessibility</p>
       </div>
     </footer>
   );
 }
-
-export default Footer;

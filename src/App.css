@@ -71,3 +71,61 @@ body {
 .animate-pulse-slow-reverse {
   animation: pulseSlow 5s infinite ease-in-out reverse;
 }
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #0f172a, #1e293b, #334155);
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.highlight {
+  color: #38bdf8;
+}
+
+.hero-subtext {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #38bdf8;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0ea5e9;
+}
+
+.btn-secondary:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+}

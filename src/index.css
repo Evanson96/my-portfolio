@@ -2,13 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Google Fonts fallback - optional if already in index.html */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap');
-
-.font-montserrat {
-  font-family: 'Montserrat', sans-serif;
+/* Smooth scroll for in-page anchors */
+html {
+  scroll-behavior: smooth;
 }
 
-.font-roboto {
-  font-family: 'Roboto', sans-serif;
+/* Selection color */
+::selection {
+  background: #bfdbfe; /* blue-200 */
+  color: #1e3a8a;      /* blue-900 */
+}
+
+/* Small useful utility for line clamp (if tailwind plugin not installed) */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

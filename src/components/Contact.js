@@ -1,96 +1,58 @@
-import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaEnvelope, FaLinkedin, FaGithub, FaCopy, FaCheck } from "react-icons/fa";
 
-function Contact() {
+export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const email = "evan.muti12@gmail.com";
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <section
-      id="contact"
-      tabIndex={-1}
-      className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-10 mb-24 font-roboto"
-    >
-      <h2 className="text-4xl font-bold text-blue-600 border-b-4 border-blue-600 pb-2 mb-8 font-montserrat">
-        Contact Me
-      </h2>
-      <form
-        className="flex flex-col space-y-6"
-        action="https://formsubmit.co/evan.muri12@gmail.com"
-        method="POST"
-        target="_blank"
-        noValidate
-      >
-        <label className="flex flex-col text-gray-700 font-semibold text-lg">
-          Name
-          <input
-            type="text"
-            name="name"
-            required
-            placeholder="Your name"
-            className="mt-1 rounded-lg border-2 border-gray-300 p-3 focus:border-blue-600 focus:outline-none transition"
-          />
-        </label>
-        <label className="flex flex-col text-gray-700 font-semibold text-lg">
-          Email
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="your.email@example.com"
-            className="mt-1 rounded-lg border-2 border-gray-300 p-3 focus:border-blue-600 focus:outline-none transition"
-          />
-        </label>
-        <label className="flex flex-col text-gray-700 font-semibold text-lg">
-          Message
-          <textarea
-            name="message"
-            rows="5"
-            required
-            placeholder="Write your message here..."
-            className="mt-1 rounded-lg border-2 border-gray-300 p-3 resize-none focus:border-blue-600 focus:outline-none transition"
-          ></textarea>
-        </label>
-        <button
-          type="submit"
-          className="self-start px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-700 text-white font-bold shadow-md hover:from-purple-700 hover:to-blue-600 transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-400"
-        >
-          Send
-        </button>
-      </form>
+    <section id="contact" className="py-20">
+      <div className="max-w-3xl mx-auto px-6">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700 dark:text-blue-300 mb-6" data-aos="fade-up">Contact</h2>
 
-      <div
-        className="mt-10 flex justify-center space-x-8 text-3xl text-blue-600"
-        aria-label="Social media links"
-      >
-        <a
-          href="mailto:evan.muri12@gmail.com"
-          aria-label="Email Evanson Munene Murimi"
-          title="Email"
-          className="hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
-        >
-          <FaEnvelope />
-        </a>
-        <a
-          href="https://linkedin.com/in/evanson-murimi-51a771125"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn profile"
-          title="LinkedIn"
-          className="hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://github.com/evanson96"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub profile"
-          title="GitHub"
-          className="hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded"
-        >
-          <FaGithub />
-        </a>
+        <form data-aos="fade-up" className="rounded-2xl border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900" action="https://formsubmit.co/evan.muti12@gmail.com" method="POST" target="_blank">
+          <input type="hidden" name="_captcha" value="false" />
+          <div className="grid md:grid-cols-2 gap-6">
+            <label className="block">
+              <span className="font-semibold">Name</span>
+              <input name="name" type="text" required className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-700 p-3 bg-transparent focus:ring-2 focus:ring-blue-500" />
+            </label>
+            <label className="block">
+              <span className="font-semibold">Email</span>
+              <input name="email" type="email" required className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-700 p-3 bg-transparent focus:ring-2 focus:ring-blue-500" />
+            </label>
+          </div>
+
+          <label className="block mt-6">
+            <span className="font-semibold">Message</span>
+            <textarea name="message" rows="6" required className="mt-2 w-full rounded-lg border border-gray-300 dark:border-gray-700 p-3 bg-transparent focus:ring-2 focus:ring-blue-500" />
+          </label>
+
+          <div className="mt-6 flex items-center gap-4">
+            <button type="submit" className="px-6 py-3 rounded-full bg-blue-600 text-white font-bold hover:bg-blue-700">Send Message</button>
+
+            <button type="button" onClick={copyEmail} className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-700">
+              {copied ? <FaCheck /> : <FaCopy />} {copied ? "Copied!" : "Copy Email"}
+            </button>
+
+            <div className="ms-auto flex items-center gap-5 text-2xl">
+              <a href={`mailto:${email}`} aria-label="Email"><FaEnvelope /></a>
+              <a href="https://linkedin.com/in/evanson-murimi-51a771125" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
+              <a href="https://github.com/evanson96" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub /></a>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
   );
 }
-
-export default Contact;
